@@ -6,6 +6,7 @@ import './styles/App.css';
 //components
 import Header from './components/Header'
 import LogInScreen from './components/LoginScreen';
+import RegisterScreen from './components/RegisterScreen';
 
 const App = () => {
   const [authToken, setAuthToken] = React.useState(localStorage.getItem('JWT'));
@@ -22,6 +23,7 @@ const App = () => {
     <div>
       <Header context={context}/>
       {route === '/login' ? <LogInScreen context={context} /> : null}  
+      {route === "/register" ? <RegisterScreen context={context} /> : null}
     </div>
   )
 }
