@@ -1,0 +1,22 @@
+.form-button{
+    background-color: #3173b0;
+    color: white;
+    cursor: pointer;
+
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 5px 60px;
+    margin-top: 10px;
+
+    font-size: 20px;
+    font-weight:500;
+}
+
+.form-button:hover{
+    background-color: #457eb4;
+}
+
+.form-button:active{
+    background-color: #73abe1;
+    color: white;
+}

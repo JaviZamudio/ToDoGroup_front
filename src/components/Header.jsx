@@ -13,14 +13,14 @@ const HeaderButtons = ({setRoute}) => {
         setRoute("/login");
     }
 
-    const signupButton = () => {
-        setRoute("/signup");
+    const registerButton = () => {
+        setRoute("/register");
     }
 
     return (
         <div className="header-buttons">
             <button className="header-login" onClick={loginButton}>Login</button>
-            <button className="header-signup" onClick={signupButton}>Sign Up</button>
+            <button className="header-register" onClick={registerButton}>Sign Up</button>
         </div>
     );
 }
@@ -56,7 +56,7 @@ const Header = ({ context }) => {
                 <h1 className="header-title-text">TodoGroup</h1>
             </div>
 
-            {route === '/login' || route === '/signup' ? <HeaderButtons setRoute={setRoute}/> : null}
+            {route === '/login' || route === '/register' ? <HeaderButtons setRoute={setRoute}/> : null}
         </header>
     );
 }

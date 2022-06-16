@@ -52,7 +52,7 @@
     border: 1px solid #ffffff;
 }
 
-.header-signup{
+.header-register{
     background-color: #206DB5;
     color: white;
     border: 3px solid white;
@@ -63,11 +63,11 @@
     cursor: pointer;
 }
 
-.header-signup:hover{
+.header-register:hover{
     background-color: #3173b0;
     color: white;
 }
 
-.header-signup:active{
+.header-register:active{
     background-color: #69b0f2;
 }
