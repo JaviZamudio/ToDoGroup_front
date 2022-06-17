@@ -25,3 +25,22 @@ export const login = async (userName, password) => {
 
     return response;
 }
+
+export const register = async (name, userName, password, email) => {
+    const bodyData = {
+        name,
+        userName,
+        password,
+        email,
+    };
+
+    const response = await fetch(
+        `${api.host}${api.uri}/users/register`,
+        {
+            ...defaultOptions,
+            body: JSON.stringify(bodyData)
+        })
+        .then(res => res.json())
+
+    return response;
+}

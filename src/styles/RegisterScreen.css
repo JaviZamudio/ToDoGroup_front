@@ -3,9 +3,9 @@
     border-radius: 100px;
 
     width: 472px;
-    height: 590px;
+    min-height: 590px;
     margin: 40px auto;
-    padding: 20px 0;
+    padding: 45px 0;
     box-sizing: content-box;
 
     display: flex;
