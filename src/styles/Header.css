@@ -71,3 +71,44 @@
 .header-register:active{
     background-color: #69b0f2;
 }
+
+.header-nav{
+    display: flex;
+    align-items: center;
+}
+
+.header-link{
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 10px;
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 0 5px;
+}
+
+.header-active-link{
+    border-bottom: 3px solid white;
+}
+
+.header-logout-button{
+    background-color: #206DB5;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+
+    border: 3px solid white;
+    padding: 2px 10px;
+    margin-left: 10px;
+    
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.header-logout-button:hover{
+    background-color: #3173b0;
+}
+
+.header-logout-button:active{
+    background-color: #69b0f2;
+}

@@ -25,29 +25,38 @@ const HeaderButtons = ({setRoute}) => {
     );
 }
 
-const HeaderNav = () => {
+const HeaderNav = ({setRoute, route}) => {
+    const myTasks = () => {
+        setRoute("/tasks");
+    }
+
+    const myGroups = () => {
+        setRoute("/groups");
+    }
+
     return (
         <div className="header-nav">
-            <a href="/tasks" className="header-link">My Tasks</a>
-            <a href="/groups" className="header-link">My Groups</a>
+            <a className={"header-link " + (route === "/tasks" ? "header-active-link" : "")} onClick={myTasks}>My Tasks</a>
+            <a className={"header-link " + (route === "/groups" ? "header-active-link" : "")} onClick={myGroups}>My Groups</a>
         </div>
     );
 }
 
-const HeaderProfile = () => {
-    return (
-        <div className="header-profile">
-            <img src={""} className="header-logo" alt="logo" />
+const HeaderLogout = ({ setRoute, setAuthToken }) => {
+    const logout = () => {
+        setAuthToken(null);
+        setRoute("/login");
+    }
 
-            <div className="header-profile-info">
-                <h1 className="header-profile-name">John Doe</h1>
-            </div>
+    return (
+        <div className="header-logout">
+            <button className="header-logout-button" onClick={logout}>Logout</button>
         </div>
     );
 }
 
 const Header = ({ context }) => {
-    const { route, setRoute } = context;
+    const { route, setRoute, setAuthToken } = context;
 
     return (
         <header className="header">
@@ -57,6 +66,8 @@ const Header = ({ context }) => {
             </div>
 
             {route === '/login' || route === '/register' ? <HeaderButtons setRoute={setRoute}/> : null}
+            {route !== '/login' && route !== '/register' ? <HeaderNav setRoute={setRoute} route={route}/> : null}
+            {route !== '/login' && route !== '/register' ? <HeaderLogout setRoute={setRoute} setAuthToken={setAuthToken}/> : null}
         </header>
     );
 }
